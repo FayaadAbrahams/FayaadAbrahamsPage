@@ -1,35 +1,52 @@
+import { useEffect } from 'react';
 import './assets/App.css';
 import NavBar from './NavBar.tsx';
+
+import CloseIcon from '@mui/icons-material/Close';
 function App() {
+  useEffect(() => {
+    const cards = document.querySelectorAll('.main-page-card');
+    let currCardIndex = 0;
 
-  const button = document.querySelector('.glow-button') as HTMLElement;
+    if (cards.length > 0) {
+      const rotateCards = () => {
 
-  if (button) {
-    button.addEventListener('mousemove', (e) => {
-      const rect = button.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+        cards.forEach(card => {
+          card.classList.remove('card-front', 'card-left', 'card-right');
+        });
 
-      button.style.setProperty('--x', `${x}px`);
-      button.style.setProperty('--y', `${y}px`);
-    });
+        const leftCardIndex = (currCardIndex + 2) % 3;
+        const frontCardIndex = currCardIndex;
+        const rightCardIndex = (currCardIndex + 1) % 3;
 
-    button.addEventListener('mouseleave', () => {
-      button.style.setProperty('--x', `50%`);
-      button.style.setProperty('--y', `50%`);
-    });
-  }
+        cards[leftCardIndex].classList.add('card-left');
+        cards[frontCardIndex].classList.add('card-front');
+        cards[rightCardIndex].classList.add('card-right');
+
+        currCardIndex = (currCardIndex + 1) % 3;
+      };
+
+      rotateCards();
+
+      const interval = setInterval(rotateCards, 4000);
+
+      return () => clearInterval(interval);
+    }
+  }, []);
   return (
     <>
       <NavBar />
       <div className="body-container">
         <div className="body-content-container">
+          <div className="main-page-card-holder">
+            <div className="main-page-card card-left"><CloseIcon style={{ color: "red", width: "100%" }} /></div>
+            <div className="main-page-card card-front"><CloseIcon style={{ color: "yellow", width: "100%" }} /></div>
+            <div className="main-page-card card-right"><CloseIcon style={{ color: "black", width: "100%" }} /></div>
+          </div>
           <div className="profile-image-container">
             <img src="https://avatars.githubusercontent.com/u/102885626?v=4" alt="Fayaad Abrahams" />
           </div>
-          <div className="home-page-demo-container">
-          </div>
-          <h1 className='heading-left'>Hey!</h1>
+          <h1>Hey!</h1>
           <h1>I'm Fayaad Abrahams.</h1>
           <div className="scrolling-words-container">
             <h2>I am a, </h2>
