@@ -4,6 +4,7 @@ const initialState = {
     darkMode: true,
     isBouncing: false,
     showingIcon: true,
+    currentTab: 1,
 };
 
 const themeSlice = createSlice({
@@ -24,9 +25,12 @@ const themeSlice = createSlice({
         setDarkMode: (state, action) => {
             state.darkMode = action.payload;
         },
+        setCurrentTab: (state, action) => {
+            state.currentTab = action.payload;
+        }
 
     },
 });
 
-export const { startBouncing, toggleIcon, completeBouncing, setDarkMode } = themeSlice.actions;
+export const { startBouncing, toggleIcon, completeBouncing, setDarkMode, setCurrentTab } = themeSlice.actions;
 export default themeSlice.reducer;

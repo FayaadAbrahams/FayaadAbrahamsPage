@@ -14,7 +14,7 @@ html {
   --color-light: #242424;
   --primary-dark-color: #9be05a;
   --primary-light-color: #0b2d17;
-  --dark-color: #0d141f;
+  --dark-color: #000000;
   --light-color: #eaedec;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -85,6 +85,10 @@ html {
     color: var(--light-color);
   }
 
+  .active-tab {
+    color: var(--light-color);
+  }
+
   .github-icon:hover {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7494%) hue-rotate(155deg) brightness(99%) contrast(104%);
   }
@@ -123,6 +127,12 @@ html {
   .dark-mode-icon:hover,
   .nav-list a:hover {
     color: var(--dark-color);
+  }
+
+  .active-tab {
+    color: var(--dark-color);
+    text-decoration: underline;
+
   }
 
   .cursor {
