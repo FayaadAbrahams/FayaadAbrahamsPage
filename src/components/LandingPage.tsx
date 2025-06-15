@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import '../assets/LandingPageStyles.css';
 import NavBar from './NavBar.tsx';
 
-import CloseIcon from '@mui/icons-material/Close';
+import { FaReact } from "react-icons/fa";
 
 
 function LandingPage() {
@@ -40,12 +40,16 @@ function LandingPage() {
   return (
     <>
       <NavBar />
-      <div className="body-container">
-        <div className="body-content-container">
+      <div className="body-container non-select">
+        <div className="body-content-container" >
           <div className="main-page-card-holder">
-            <div className="main-page-card card-left"><CloseIcon style={{ color: "red", width: "100%" }} /></div>
-            <div className="main-page-card card-front"><CloseIcon style={{ color: "yellow", width: "100%" }} /></div>
-            <div className="main-page-card card-right"><CloseIcon style={{ color: "black", width: "100%" }} /></div>
+            <div className="main-page-card card-left">
+              <div className="card-content">
+                <FaReact size={"80px"} />
+              </div>
+            </div>
+            <div className="main-page-card card-front"></div>
+            <div className="main-page-card card-right"></div>
           </div>
           <div className="profile-image-container">
             <img src="https://avatars.githubusercontent.com/u/102885626?v=4" alt="Fayaad Abrahams" />

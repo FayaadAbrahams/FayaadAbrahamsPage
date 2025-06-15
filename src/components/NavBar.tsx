@@ -4,7 +4,7 @@ import SunnyIcon from '@mui/icons-material/Sunny';
 import BedtimeIcon from '@mui/icons-material/Bedtime';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { completeBouncing, setDarkMode, startBouncing, toggleIcon } from '../store/themeSlice';
+import { completeBouncing, startBouncing } from '../store/themeSlice';
 
 
 const NavBar = () => {
@@ -44,7 +44,7 @@ const NavBar = () => {
 
   return (
     <>
-      < nav className="nav-bar">
+      < nav className="nav-bar non-select">
         <ul className="nav-list">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>

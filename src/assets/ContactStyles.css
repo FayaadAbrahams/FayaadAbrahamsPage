@@ -1,0 +1,14 @@
+.linkedin-icon {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(99%) saturate(1392%) hue-rotate(193deg) brightness(92%) contrast(96%);
+}
+
+.github-icon,
+.linkedin-icon,
+.mail-icon {
+    width: 41px;
+    height: 41px;
+}
+
+a:hover {
+    cursor: pointer;
+}
