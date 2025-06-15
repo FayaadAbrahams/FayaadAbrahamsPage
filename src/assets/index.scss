@@ -10,12 +10,12 @@ html {
 :root {
   font-family: 'Alata', sans-serif;
   color-scheme: light dark;
-  --color-dark: rgba(255, 255, 255, 0.87);
+  --color-dark: #ffffffde;
   --color-light: #242424;
   --primary-dark-color: #9be05a;
-  --primary-light-color: #f85f23;
+  --primary-light-color: #0b2d17;
   --dark-color: #0d141f;
-  --light-color: #ffffff;
+  --light-color: #eaedec;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,9 +32,8 @@ html {
   position: fixed;
   left: var(--x, 50%);
   top: var(--y, 50%);
-  width: 25px;
-  height: 25px;
-  background: transparent;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -59,11 +58,6 @@ html {
     color: var(--dark-color);
   }
 
-  .main-page-card {
-    background-color: var(--primary-dark-color);
-    border: 2px solid var(--light-color);
-  }
-
   .contact-btn-container a {
     color: var(--dark-color);
   }
@@ -80,19 +74,19 @@ html {
     color: var(--primary-dark-color);
   }
 
+  .cursor {
+    background-color: var(--primary-dark-color);
+    border: 2px solid var(--light-color);
 
+  }
 
   .dark-mode-icon:hover,
   .nav-list a:hover {
     color: var(--light-color);
   }
 
-  .github-icon {
+  .github-icon:hover {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7494%) hue-rotate(155deg) brightness(99%) contrast(104%);
-  }
-
-  .cursor {
-    border: 2px solid var(--light-color);
   }
 
   .nav-list Link:hover,
@@ -131,9 +125,9 @@ html {
     color: var(--dark-color);
   }
 
-  .main-page-card {
-    background-color: var(--primary-light-color);
-    border: 2px solid var(--light-color);
+  .cursor {
+    color: var(--primary-light-color);
+    border: 2px solid var(--dark-color);
   }
 
   .dark-mode-btn {
@@ -153,8 +147,9 @@ html {
     color: var(--light-color);
   }
 
-  .cursor {
-    border: 2px solid var(--dark-color);
+
+  .github-icon:hover {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(99%) saturate(0%) hue-rotate(352deg) brightness(96%) contrast(100%);
   }
 
   a,
@@ -203,7 +198,7 @@ html {
   height: 320px;
   border: 2px solid var(--light-color, #ffffff);
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 3px 24px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     opacity 1s ease-out,
@@ -213,6 +208,11 @@ html {
   justify-content: space-between;
   padding: 20px;
   box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
 }
 
 .card-left {
@@ -578,6 +578,11 @@ button:focus-visible {
 @media (max-width: 480px) {
   .main-page-card-holder {
     height: 180px;
+  }
+
+  .contact-content-container {
+    position: sticky;
+    margin: auto;
   }
 
   .main-page-card {
