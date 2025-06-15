@@ -80,9 +80,7 @@ html {
     color: var(--primary-dark-color);
   }
 
-  .contact-content-container {
-    border: 1px solid var(--light-color);
-  }
+
 
   .dark-mode-icon:hover,
   .nav-list a:hover {
@@ -153,10 +151,6 @@ html {
   .contact-btn-container button {
     background-color: var(--primary-light-color);
     color: var(--light-color);
-  }
-
-  .contact-content-container {
-    border: 2px solid #00000077;
   }
 
   .cursor {
@@ -249,8 +243,7 @@ html {
   align-items: center;
 }
 
-.body-content-container,
-.contact-content-container {
+.body-content-container {
   margin-top: 7vh;
   display: block;
   text-align: left;
@@ -258,16 +251,7 @@ html {
   width: 100vh;
 }
 
-.contact-content-container {
-  border-radius: 8px;
-  height: 300px;
-  padding: 60px;
-  width: auto;
-  margin-left: 10vh;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+
 
 .nav-list {
   list-style: none;
@@ -435,7 +419,7 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.5em;
   line-height: 0.5;
 }
 

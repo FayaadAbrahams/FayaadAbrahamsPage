@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import About from './components/About';
 import LandingPage from './components/LandingPage';
-import Contact from './components/Contact';
+import SideBar from './components/SideBar';
 import Projects from './components/Projects';
 import { Provider } from 'react-redux';
 import store from "./store/store";
@@ -45,7 +45,7 @@ function App() {
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/contact" element={<SideBar />} />
 
                 </Routes>
             </Provider>

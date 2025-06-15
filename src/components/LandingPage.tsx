@@ -3,6 +3,7 @@ import '../assets/LandingPageStyles.css';
 import NavBar from './NavBar.tsx';
 
 import { FaReact } from "react-icons/fa";
+import SideBar from './SideBar.tsx';
 
 
 function LandingPage() {
@@ -39,6 +40,7 @@ function LandingPage() {
 
   return (
     <>
+      <SideBar />
       <NavBar />
       <div className="body-container non-select">
         <div className="body-content-container" >
