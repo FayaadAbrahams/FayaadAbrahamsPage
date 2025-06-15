@@ -8,11 +8,9 @@ import { completeBouncing, setDarkMode, startBouncing, toggleIcon } from '../sto
 
 
 const NavBar = () => {
-  // const [darkModeState, setDarkModeState] = useState(true);
-  // const [isBouncing, setIsBouncing] = useState(false);
-  // const [showingIcon, setShowingIcon] = useState(true);
-  // const { darkMode, isBouncing, showingIcon } = useSelector((state: any) => state.theme);
   const darkMode = useSelector((state: any) => state.theme.darkMode);
+  const isBouncing = useSelector((state: any) => state.theme.isBouncing);
+  const showingIcon = useSelector((state: any) => state.theme.showingIcon);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,30 +24,24 @@ const NavBar = () => {
     }
   }, [darkMode]);
 
+
   const toggleDarkMode = () => {
+    if (isBouncing) return;
+
     dispatch(startBouncing());
 
     setTimeout(() => {
-      dispatch(darkMode);
-    }, 400);
-
-    setTimeout(() => {
-      // setDarkModeState(!darkMode);
-      // setShowingIcon(!darkMode);
-      // setIsBouncing(false);
-
-      dispatch(setDarkMode(true));
-      dispatch(toggleIcon(darkMode));
       dispatch(completeBouncing());
     }, 800);
   };
 
   const getIcon = () => {
-    if (dispatch()) {
+    if (isBouncing) {
       return showingIcon ? <SunnyIcon className="dark-mode-icon" /> : <BedtimeIcon className="dark-mode-icon" />;
     }
     return darkMode ? <SunnyIcon className="dark-mode-icon" /> : <BedtimeIcon className="dark-mode-icon" />;
   };
+
   return (
     <>
       < nav className="nav-bar">
